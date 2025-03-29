@@ -5,22 +5,16 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.*;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.test.context.TestPropertySource;
 
-import com.api.clima.domain.WeatherResponse;
 import com.api.clima.domain.dto.WeatherResponseDto;
 import com.api.clima.infrastructure.external.clima.WeatherApiExternal;
 
@@ -73,7 +67,7 @@ class WeatherServicesImpTest {
 		when(weatherApiExternal.getWeather(latitude,longitude)).thenReturn(externalResponse);
 		
 		WeatherResponseDto result = weatherServiceImp.validateWeather(email,latitude,longitude);
-		//Se validan los datos moqueados
+
         assertEquals(1189, result.getForecast_code());
         assertEquals("Niebla moderada", result.getForecast_description());
         assertEquals(true, result.isBuyer_notification());
@@ -101,13 +95,13 @@ class WeatherServicesImpTest {
 		when(weatherApiExternal.getWeather(latitude,longitude)).thenReturn(externalResponse);
 		
 		WeatherResponseDto result = weatherServiceImp.validateWeather(email,latitude,longitude);
-		//Se validan los datos moqueados
         assertEquals(2000, result.getForecast_code());
         assertEquals("Soleado", result.getForecast_description());
         assertFalse(result.isBuyer_notification());
         
         verify(emailService, never()).sendEmail(email, result.getForecast_description());
 	}
+
 	
 	@Test
     void validateWeatherTestFail() {

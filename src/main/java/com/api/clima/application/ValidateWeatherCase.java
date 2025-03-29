@@ -3,7 +3,6 @@ package com.api.clima.application;
 import org.springframework.stereotype.Service;
 
 import com.api.clima.domain.IWeatherService;
-import com.api.clima.domain.WeatherResponse;
 import com.api.clima.domain.dto.WeatherResponseDto;
 
 

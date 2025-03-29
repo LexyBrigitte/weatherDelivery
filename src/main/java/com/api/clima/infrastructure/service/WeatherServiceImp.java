@@ -1,6 +1,5 @@
 package com.api.clima.infrastructure.service;
 
-import com.api.clima.domain.WeatherResponse;
 import com.api.clima.domain.dto.WeatherResponseDto;
 import com.api.clima.domain.IWeatherService;
 import com.api.clima.infrastructure.external.clima.WeatherApiExternal;

@@ -11,7 +11,6 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import com.api.clima.domain.IWeatherService;
-import com.api.clima.domain.WeatherResponse;
 import com.api.clima.domain.dto.WeatherResponseDto;
 
 @ExtendWith(MockitoExtension.class)

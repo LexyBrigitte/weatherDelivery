@@ -15,7 +15,7 @@ Este proyecto es una API que consulta el clima utilizando un servicio externo y 
 ### 🔹 **Pasos para ejecutar**
 1. **Clonar el repositorio**
    ```sh
-   git clone https://github.com/tu-usuario/tu-repo.git
+   git clone https://github.com/LexyBrigitte/weatherDelivery.git
    cd tu-repo
    ```
 	- De ser necesario aplicar al proyecto conversión a Maven

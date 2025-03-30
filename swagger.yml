@@ -49,6 +49,26 @@ paths:
                 type: object
                 additionalProperties:
                   type: object
+  /weather/logNotification/{email}:
+    get:
+      tags:
+        - WeatherDelivery
+      operationId: getLogNotification
+      parameters:
+        - name: email
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: object
+                additionalProperties:
+                  type: object
 components:
   schemas:
     WeatherRequest:

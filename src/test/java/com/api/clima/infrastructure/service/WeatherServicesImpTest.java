@@ -52,6 +52,7 @@ class WeatherServicesImpTest {
                 .collect(Collectors.toList());*/	    
 		
 		Map<String, Object> externalResponse = Map.of(
+			"location", Map.of("region", "Antioquia"),
 		    "forecast", Map.of(
 		        "forecastday", List.of(
 		            Map.of("day", Map.of(
@@ -80,6 +81,7 @@ class WeatherServicesImpTest {
 	void validateWeatherNoEmailTest() {	    
 		
 		Map<String, Object> externalResponse = Map.of(
+			"location", Map.of("region", "Antioquia"),
 		    "forecast", Map.of(
 		        "forecastday", List.of(
 		            Map.of("day", Map.of(

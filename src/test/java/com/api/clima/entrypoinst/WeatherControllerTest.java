@@ -37,7 +37,7 @@ class WeatherControllerTest {
     void WeatherResponseApi() throws Exception {
     	WeatherRequest weatherRequest = new WeatherRequest ("lexybrigitte@gmail.com",4.6097,-74.0817);
     	
-    	WeatherResponseDto weatherResponse = new WeatherResponseDto(1189, "Niebla moderada",true);
+    	WeatherResponseDto weatherResponse = new WeatherResponseDto(1189, "Niebla moderada",true,"Antioquia");
     	
     	lenient().when(validateWeatherCase.execute(weatherRequest.getEmail(), weatherRequest.getLatitude(), weatherRequest.getLongitude())).thenReturn(weatherResponse);
 

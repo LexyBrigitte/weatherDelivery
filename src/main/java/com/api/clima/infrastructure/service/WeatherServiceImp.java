@@ -45,6 +45,9 @@ public class WeatherServiceImp implements IWeatherService {
         Map<String, Object> day = (Map<String, Object>) forecast.get("day");
         Map<String, Object> condition = (Map<String, Object>) day.get("condition");
         
+        Map<String, Object> location = (Map<String, Object>) weatherResponse.get("location");
+        String region = (String) location.get("region");
+        
         int forecast_code = (int) condition.get("code");
         String forecast_description = (String) condition.get("text");
 
@@ -54,7 +57,7 @@ public class WeatherServiceImp implements IWeatherService {
             emailService.sendEmail(email, forecast_description);
         }
 
-        return new WeatherResponseDto(forecast_code, forecast_description, buyer_notification);
+        return new WeatherResponseDto(forecast_code, forecast_description, buyer_notification,region);
     }
 }
 
